@@ -1,0 +1,27 @@
+/* #sidebar{
+ height: 100%;
+ padding-top: 90px;
+ width: 20%;
+ position: fixed;
+ background-color: rosybrown;
+} */
+#dashboard{
+    margin-top: 70px;
+    color:black;
+    margin-left: 350px;
+    margin-right: 100px;
+    width:50%;
+    
+    /* border-radius: 10px;
+    justify-content: center;
+    align-items: center; */
+
+ 
+}
+#navbar{
+    background-color: darkslategray !important;
+    
+}
+
+
+  

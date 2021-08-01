@@ -1,0 +1,30 @@
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Users</h2>
+          </div>
+          <br/>
+          <div class="default-table">
+            <table>
+              <thead>
+                <tr>
+                    <th>UserID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let i of users">
+                  <td>{{i.userid}}</td>
+                  <td><a routerLink="/user/{{i.userid}}">{{i.firstname}} {{i.lastname}} </a></td>
+                  <td>{{i.email}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
+

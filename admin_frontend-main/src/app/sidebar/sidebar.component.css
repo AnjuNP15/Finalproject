@@ -1,0 +1,20 @@
+#sidebar{
+ border-right: none;
+ background: #002b5c;
+ color: white;
+ padding: 16px;
+ text-align: center;
+ height: 100%;
+ padding-top: 90px;
+ width: 300px;
+ position: fixed;
+ margin-top: 55px;
+ border-radius: 10px;
+}
+#menu {
+    margin-top: 30px;
+      padding-top: 20px;
+}
+pi{
+    border-radius: 25px;
+}

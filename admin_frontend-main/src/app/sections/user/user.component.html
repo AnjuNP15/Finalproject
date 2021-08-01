@@ -1,0 +1,53 @@
+<section class="Details">
+    <div class="container-fluid">
+      
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{user.image}}" style="height: 4cm; width: 4cm;"/>
+                <h2 style="display: unset; padding-left: 150px;">{{user.firstname}} {{user.lastname}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <br>
+              <br>
+              <h5>Description</h5>
+                {{user.description}}
+            </div>
+        </div>
+    </div>
+</section>
+<br/>
+<br/>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-heading">
+        <h2>My Posts</h2>
+      </div>
+      <div class="default-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Slno</th>
+              <th>Title</th>
+                          <th>Created Time</th>
+              <th>Tag</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of posts;let k=index;">
+              <td>{{k+1}}</td>
+              <td>{{i.PostTitle}}</td>
+              
+              <td>{{i.CreatedTime | date}}</td>
+              <td>{{i.Tag}}</td>
+              <td><a routerLink="/post/{{i._id}}">More</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
