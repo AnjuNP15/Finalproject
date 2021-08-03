@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +15,7 @@ import { PostComponent } from './sections/post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './sections/home/home.component';
 import { UserComponent } from './sections/user/user.component';
+import { CreatepostComponent } from './sections/createpost/createpost.component';
 
 
 
@@ -30,12 +32,14 @@ import { UserComponent } from './sections/user/user.component';
     PostComponent,
     NavbarComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    CreatepostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

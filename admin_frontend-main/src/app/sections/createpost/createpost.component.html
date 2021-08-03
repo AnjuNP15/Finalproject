@@ -1,0 +1,47 @@
+<div>
+
+    <div class="card" style="border-radius: 25px;">
+  
+      <div class="card-body p-5">
+        <form (ngSubmit)="createpost()">
+          
+          <br />
+          <br />
+          <br />
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example1cg">Title</label>
+            <input  type="text" id="form3Example1" class="form-control form-control-lg" [(ngModel)]="item.PostTitle">
+            
+  
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example1cg">Description</label>
+            <input type="text" id="form3Example2" class="form-control form-control-lg" [(ngModel)]="item.Description">
+  
+          </div>
+  
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3cg">Image</label>
+            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Image">
+  
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3cg">Tag</label>
+            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Tag">
+  
+          </div>
+
+          <div style="width:60px;">
+            <div style="float: left; width: 60px">
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+          </div>
+
+        </form>
+  
+      </div>
+  
+     
+  </div>
+      </div>

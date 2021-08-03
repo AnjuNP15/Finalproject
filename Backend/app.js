@@ -82,8 +82,8 @@ app.get('/posts/:id', function(req, res){
 
   app.get('/post/:id', function(req, res){
    
-    // const postid =req.params.id
- const postid="60fb1bcfb650c7e41eb0c1bd"
+     const postid =req.params.id
+// const postid="60fb1bcfb650c7e41eb0c1bd"
     console.log("postid is "+ postid);
        Postdata.findOne({"_id": postid})
     .then((post)=>{
@@ -101,24 +101,21 @@ app.get('/user/:id', function(req, res){
       });
   });
 
-  app.post('/insertuser', verifyToken, function(req,res){
-    console.log(req.body);
-    var newuser = {
-        name : req.body.user.name,
-        email : req.body.user.email,
-        pwd : req.body.user.pwd,
-        image : req.body.user.image,
-        usertype : req.body.user.usertype
-        
+  app.post('/createpost' ,function(req, res){
+    //console.log(req.body);
+    var postcreated = {
+        PostTitle : req.body.newpost.PostTitle,
+        CreatedTime : req.body.newpost.CreatedTime,
+        Description : req.body.newpost.Description,
+        Tag : req.body.newpost.Tag,
+        Image : req.body.newpost.Image,
+        Author : req.body.newpost.Author,
+        AuthorID : req.body.newpost.AuthorID,
+        Status : req.body.newpost.Status
     }
-    var user = new userdata(newuser);
-    user.save();
+    var postcreated = new Postdata(newpost);
+    postcreated.save();
 });
-
-
-
-
-
 
 app.listen(3000, function(){
     console.log('Listening to port 3000');
