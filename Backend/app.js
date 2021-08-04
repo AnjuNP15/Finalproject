@@ -102,8 +102,11 @@ app.get('/user/:id', function(req, res){
   });
 
   app.post('/createpost' ,function(req, res){
-    //console.log(req.body);
-    var postcreated = {
+    console.log(req.body);
+    const mongoose = require('mongoose');
+    var newpost = {
+        _id : new mongoose.Types.ObjectId(),
+       
         PostTitle : req.body.newpost.PostTitle,
         CreatedTime : req.body.newpost.CreatedTime,
         Description : req.body.newpost.Description,
@@ -112,9 +115,9 @@ app.get('/user/:id', function(req, res){
         Author : req.body.newpost.Author,
         AuthorID : req.body.newpost.AuthorID,
         Status : req.body.newpost.Status
-    }
-    var postcreated = new Postdata(newpost);
-    postcreated.save();
+    };
+    var newpost = new Postdata(newpost);
+    newpost.save();
 });
 
 app.listen(3000, function(){

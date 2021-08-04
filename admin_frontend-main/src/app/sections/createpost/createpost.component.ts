@@ -26,7 +26,21 @@ export class CreatepostComponent implements OnInit {
   }
     createpost()
     {
-    this.createpostservice.createpost(this.item);
+    console.log(this.item);
+
+    var authorid = localStorage.getItem('userid');
+    authorid = authorid == null ? '' : authorid.toString();
+    
+    var firstname = localStorage.getItem('firstname'); 
+    firstname = firstname == null ? '' : firstname.toString();
+    var lastname = localStorage.getItem('lastname'); 
+    lastname = lastname == null ? '' : lastname.toString();
+
+    this.item.CreatedTime=new Date().toISOString();
+    this.item.Status='pending';
+    this.item.AuthorID = authorid;
+    this.item.Author=firstname+' ' + lastname;
+      this.createpostservice.createpost(this.item);
     
     }
     

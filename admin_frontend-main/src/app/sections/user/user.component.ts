@@ -24,7 +24,11 @@ export class UserComponent implements OnInit {
     this.userservice.getuser(userIdFromRoute)
     .subscribe(data =>
     {
-        this.user = data;
+      this.user = data;
+      localStorage.setItem('firstname', this.user.firstname);
+      localStorage.setItem('lastname', this.user.lastname);
+      localStorage.setItem('userid', this.user.userid);
+      
     });
 
     this.userservice.getuserposts(userIdFromRoute)

@@ -3,32 +3,32 @@
     <div class="card" style="border-radius: 25px;">
   
       <div class="card-body p-5">
-        <form (ngSubmit)="createpost()">
+        <form name="createpost" (ngSubmit)="createpost()">
           
           <br />
           <br />
           <br />
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example1cg">Title</label>
-            <input  type="text" id="form3Example1" class="form-control form-control-lg" [(ngModel)]="item.PostTitle">
+            <input  type="text" id="form3Example1" class="form-control form-control-lg" [(ngModel)]="item.PostTitle" name="title">
             
   
           </div>
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example1cg">Description</label>
-            <input type="text" id="form3Example2" class="form-control form-control-lg" [(ngModel)]="item.Description">
+            <input type="text" id="form3Example2" class="form-control form-control-lg" [(ngModel)]="item.Description" name="description">
   
           </div>
   
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example3cg">Image</label>
-            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Image">
+            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Image" name="image">
   
           </div>
 
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example3cg">Tag</label>
-            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Tag">
+            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Tag" name="tag">
   
           </div>
 
