@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreatepostserviceService } from 'src/app/createpostservice.service';
 
 @Component({
@@ -7,7 +7,9 @@ import { CreatepostserviceService } from 'src/app/createpostservice.service';
   templateUrl: './createpost.component.html',
   styleUrls: ['./createpost.component.css']
 })
+
 export class CreatepostComponent implements OnInit {
+
   item={
     PostTitle : '',
      CreatedTime : '',
@@ -18,7 +20,7 @@ export class CreatepostComponent implements OnInit {
      AuthorID : '',
      Status : ''
    }
-  constructor(private route: ActivatedRoute,private createpostservice:CreatepostserviceService) { }
+  constructor(private route: Router,private createpostservice:CreatepostserviceService) { }
 
   ngOnInit(): void {
     //const routeParams = this.route.snapshot.paramMap;
@@ -41,9 +43,14 @@ export class CreatepostComponent implements OnInit {
     this.item.AuthorID = authorid;
     this.item.Author=firstname+' ' + lastname;
       this.createpostservice.createpost(this.item);
+      alert("Success");
+      console.log("Success");
+      console.log('/user/' + authorid)
+    this.route.navigate(['/user/' +authorid]);
     
     }
     
+   
   }
 
 

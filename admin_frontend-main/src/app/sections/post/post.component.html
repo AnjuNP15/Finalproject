@@ -3,44 +3,38 @@
   <div class="card" style="border-radius: 25px;">
 
     <div class="card-body p-5">
-      <form>
-        <div style="width:600px;">
-          <div style="float: left; width: 130px">
-          </div>
-        </div>
-        <div style="width:600px;">
-          <div style="float: right; width: 130px">
-            <button type="submit" class="btn btn-primary btn-block">Save</button>
-          </div>
-        </div>
+      <form  name="updatepost"  (ngSubmit)="updatepost()">
+        
         <br />
         <br />
         <br />
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example1cg">Title</label>
-          <label type="text" id="form3Example1" class="form-control form-control-lg">{{post.PostTitle}}</label>
-          
+          <label class="form-label" >Title</label>
+          <input  [disabled]="isnoteditable" type="text" id="form3Example1" class="form-control form-control-lg" name="title"   [(ngModel)]="post.PostTitle"> 
 
         </div>
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example1cg">Description</label>
-          <label type="text" id="form3Example2" class="form-control form-control-lg">{{post.Description}}</label>
+          <label class="form-label" >Description</label>
+          <input type="text" [disabled]="isnoteditable" id="form3Example2" class="form-control form-control-lg" [(ngModel)]="post.Description"  name="Description" >
 
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">Image</label>
-          <label type="email" id="form3Example3" class="form-control form-control-lg"></label>
-
+          <label class="form-label" >Image</label>
+          <input [disabled]="isnoteditable" type="email" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="post.Image" name ="Image">
         </div>
+<div class="form-outline mb-4">
+  <label class="form-label" >Tag</label>
+  <input type="text" [disabled]="isnoteditable" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="post.tag" name="Tag">
 
+</div>
 <br/>
 
-        <div style="width:600px;">
-          <div style="float: left; width: 130px">
-            <button type="submit" class="btn btn-primary btn-block">Edit</button>
-          </div>
-        </div>
+<div style="width:60px;">
+  <div style="float: right; width: 60px">
+    <button type="button" class="btn btn-primary btn-block"  (click)="OnClick()">Edit</button>
+  </div>
+</div>
         <div style="width:600px;">
           <div style="float: right; width: 130px">
             <button type="submit" class="btn btn-primary btn-block">Save</button>

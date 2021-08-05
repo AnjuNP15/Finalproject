@@ -11,7 +11,7 @@ import { CreatepostComponent } from './sections/createpost/createpost.component'
 const routes: Routes = [
   { path: 'home', component:HomeComponent },
   { path: 'users', component:UsersComponent },
-  { path: 'user/:userid', component:UserComponent },
+  { path: 'user/:id', component:UserComponent },
   { path: 'post/:_id', component: PostComponent },
   { path: 'createpost', component: CreatepostComponent },
 ];

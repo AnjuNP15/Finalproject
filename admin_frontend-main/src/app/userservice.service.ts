@@ -19,7 +19,7 @@ export class userserviceService {
  server_address:string='/api'
 
   getuser(id:any){
-    return this.http.get("http://localhost:3000/user/"+id);
+    return this.http.get("http://localhost:3000/user/" + id);
   }
   getuserposts(id:any){
     return this.http.get("http://localhost:3000/posts/"+id);

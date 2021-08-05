@@ -18,24 +18,25 @@ export class UserComponent implements OnInit {
   ngOnInit(): void 
   {
     const routeParams = this.route.snapshot.paramMap;
-    const userIdFromRoute = Number(routeParams.get('userid'));
-    
-    
+  
+    const userIdFromRoute = routeParams.get('id');
+    console.log("userIdFromRoute is " + userIdFromRoute);
+
     this.userservice.getuser(userIdFromRoute)
     .subscribe(data =>
     {
+      console.log(data);
       this.user = data;
       localStorage.setItem('firstname', this.user.firstname);
       localStorage.setItem('lastname', this.user.lastname);
-      localStorage.setItem('userid', this.user.userid);
+      localStorage.setItem('userid', this.user._id);
       
     });
 
     this.userservice.getuserposts(userIdFromRoute)
     .subscribe(data =>
     {
-         
-      this.posts = data;
+         this.posts = data;
     });
 
 
