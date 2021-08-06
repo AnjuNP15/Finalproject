@@ -25,9 +25,14 @@ export class PostserviceService {
     return this.http.get("http://localhost:3000/post/"+id);
   }
   updatepost(item:any){
-    console.log("the item to post request is" + item);
-     return this.http.post("http://localhost:3000/editpost",item)
-    .subscribe (data => {console.log(data)})
+         return this.http.post("http://localhost:3000/editpost",item)
+    .subscribe (data => {console.log(data)});
+  }
+
+  DeletePost(ids:any){
+    console.log("the item to post request is delete id is" + ids);
+     return this.http.post("http://localhost:3000/deletepost",{"ids":ids})
+     .subscribe (data => {console.log(data)});
   }
 }
 

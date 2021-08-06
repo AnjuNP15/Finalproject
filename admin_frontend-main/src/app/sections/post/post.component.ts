@@ -10,6 +10,7 @@ import { PostserviceService } from 'src/app/postservice.service';
 export class PostComponent implements OnInit {
   isnoteditable: boolean = true;
   post: any;
+   postobjectid:any ;
   constructor(private route: ActivatedRoute, private router: Router, private postservice: PostserviceService) { }
   postDetail = {
     PostTitle: '',
@@ -35,5 +36,14 @@ export class PostComponent implements OnInit {
   updatepost() {
     this.postservice.updatepost(this.post);
     console.log("post details are" + this.post.PostTitle);
+  }
+  DeletePost(){
+    var authorid = localStorage.getItem('userid');
+    var postobjectid = localStorage.getItem('postobjectid'); 
+    console.log("delete post id is" + postobjectid);
+    this.postservice.DeletePost(postobjectid);
+    alert("Success");
+    var authorid = localStorage.getItem('userid');
+      this.router.navigate(['/user/' + authorid]);
   }
 }

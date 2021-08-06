@@ -44,9 +44,7 @@ export class CreatepostComponent implements OnInit {
     this.item.Author=firstname+' ' + lastname;
       this.createpostservice.createpost(this.item);
       alert("Success");
-      console.log("Success");
-      console.log('/user/' + authorid)
-    this.route.navigate(['/user/' +authorid]);
+      this.route.navigate(['/user/' +authorid]);
     
     }
     

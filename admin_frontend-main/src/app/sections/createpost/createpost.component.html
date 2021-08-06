@@ -28,9 +28,14 @@
 
           <div class="form-outline mb-4">
             <label class="form-label" >Tag</label>
-            <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Tag" name="tag">
-  
-          </div>
+             <!-- <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="item.Tag" name="tag"> -->
+            <select name="options"  class="form-control form-control-lg" [(ngModel)]="item.Tag">
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Cloud Computing">Cloud Computing</option>
+              <option value="IOT">IOT</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+            </select>
+            </div>
 
           <div style="width:60px;">
             <div style="float: left; width: 60px">

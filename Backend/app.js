@@ -32,7 +32,7 @@ function verifyToken(req, res, next) {
 app.post('/newuser', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
-    console.log(req.body);
+    // console.log(req.body);
     var user = {
         username: req.body.user.username,
         email: req.body.user.email,
@@ -67,13 +67,13 @@ app.get('/users', function (req, res) {
             res.send(users);
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
         });
 });
 
 app.get('/posts/:id', function (req, res) {
     const postsid = req.params.id
-    console.log("author id  is " + postsid);
+    // console.log("author id  is " + postsid);
     Postdata.find({ "AuthorID": postsid })
         .then((posts) => {
             res.send(posts);
@@ -84,10 +84,10 @@ app.get('/post/:id', function (req, res) {
 
     const postid = req.params.id
     // const postid="60fb1bcfb650c7e41eb0c1bd"
-    console.log("postid is " + postid);
+    // console.log("postid is " + postid);
     Postdata.findOne({ "_id": postid })
         .then((post) => {
-            console.log("post details are " + post);
+            // console.log("post details are " + post);
             res.send(post);
         });
 });
@@ -95,7 +95,7 @@ app.get('/post/:id', function (req, res) {
 
 app.get('/user/:id', function (req, res) {
     const id = req.params.id
-    console.log("the user object id is" + id);
+    // console.log("the user object id is" + id);
     Userdata.findOne({ "_id": id })
         .then((user) => {
             res.send(user);
@@ -103,7 +103,7 @@ app.get('/user/:id', function (req, res) {
 });
 
 app.post('/createpost', function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     const mongoose = require('mongoose');
     var newpost = {
         _id: new mongoose.Types.ObjectId(),
@@ -122,10 +122,10 @@ app.post('/createpost', function (req, res) {
 });
 
 app.post('/editpost', (req, res) => {
-    console.log("the update data is " + req.body._id);
-    console.log("the update data is " + req.body.PostTitle );
-    console.log("the update data is " + req.body.Tag);
-    console.log("the update data is " + req.body.Image);
+    // console.log("the update data is " + req.body._id);
+    // console.log("the update data is " + req.body.PostTitle );
+    // console.log("the update data is " + req.body.Tag);
+    // console.log("the update data is " + req.body.Image);
         id = req.body._id;
         PostTitle = req.body.PostTitle;
         Description = req.body.Description;
@@ -142,8 +142,19 @@ app.post('/editpost', (req, res) => {
         })
         .then(function () {
             res.send();
-        })
-})
+        });
+});
+
+
+app.post('/deletepost',(req,res)=>{
+    console.log(req.body);
+    id = req.body.ids;
+    console.log("delete post id is" + id)
+    Postdata.findByIdAndDelete({"_id":id})
+    .then(()=>{
+                res.send();
+    });
+  })
 
 app.listen(3000, function () {
     console.log('Listening to port 3000');
